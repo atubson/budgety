@@ -8,13 +8,8 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/budget', (req, res) => {
-    res.send(
-      [{
-        title: "Hello World!",
-        description: "Hi there! How are you?"
-      }]
-    )
-  })
+const budget = require('./routes/api/budget');
 
-app.listen(process.env.PORT || 8081)
+app.use('/budget', budget)
+
+app.listen(process.env.PORT || 8081, () => {console.log(`Server started`)});
