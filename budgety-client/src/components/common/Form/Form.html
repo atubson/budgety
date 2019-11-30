@@ -1,0 +1,32 @@
+<div class="form">
+    <form v-if="isRegisterForm" @submit.prevent="onSubmitRegister">
+        <div class="float-container">
+            <label for="email">Email</label>
+            <input id="email"  type="email" v-model="registerFields.email" class="input-field" @focus="onFieldFocus($event)" @blur="onFieldBlur($event)">
+        </div>
+        <div class="float-container">
+            <label for="name">Name</label>
+            <input id="name" type="text" v-model="registerFields.name" class="input-field" @focus="onFieldFocus($event)" @blur="onFieldBlur($event)">
+        </div>
+        <div class="float-container">
+            <label for="password">Password</label>
+            <input id="password" type="password" v-model="registerFields.password" class="input-field" @focus="onFieldFocus($event)" @blur="onFieldBlur($event)">
+        </div>
+        <div class="float-container">
+            <label for="passwordConfirm">Confirm Password</label>
+            <input id="passwordConfirm" type="password" v-model="registerFields.confirmPassword" class="input-field" @focus="onFieldFocus($event)" @blur="onFieldBlur($event)">
+        </div>
+        <button type="submit">Zarejestruj</button>
+    </form>
+    <form v-else @submit.prevent="onSubmitLogin">
+        <div class="float-container">
+            <label for="email">Email</label>
+            <input id="email"  type="email" v-model="loginFields.email" class="input-field" @focus="onFieldFocus($event)" @blur="onFieldBlur($event)">
+        </div>
+        <div class="float-container">
+            <label for="password">Password</label>
+            <input id="password" type="password" v-model="loginFields.password" class="input-field" @focus="onFieldFocus($event)" @blur="onFieldBlur($event)">
+        </div>
+        <button type="submit">Zaloguj</button>
+    </form>
+</div>
